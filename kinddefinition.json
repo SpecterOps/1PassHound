@@ -1,0 +1,116 @@
+{
+    "custom_types": {
+        "OPAccount": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "building",
+                "color": "#5A8FDC"
+            }
+        },
+        "OPUser": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "user",
+                "color": "#F4CA70"
+            }
+        },
+        "OPGroup": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "user-group",
+                "color": "#FF8369"
+            }
+        },
+        "OPVault": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "vault",
+                "color": "#6AE4A9"
+            }
+        },
+        "OPItem": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "passport",
+                "color": "#C04EA0"
+            }
+        },
+        "OPApiCredential": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "code",
+                "color": "#FFF6EB"
+            }
+        },
+        "OPCreditCard": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "credit-card",
+                "color": "#FFF6EB"
+            }
+        },
+        "OPDocument": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "file",
+                "color": "#FFF6EB"
+            }
+        },
+        "OPLogin": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "user-lock",
+                "color": "#FFF6EB"
+            }
+        },
+        "OPPassport": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "passport",
+                "color": "#FFF6EB"
+            }
+        },
+        "OPPassword": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "key",
+                "color": "#FFF6EB"
+            }
+        },
+        "OPSecureNote": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "note-sticky",
+                "color": "#FFF6EB"
+            }
+        },
+        "OPServer": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "server",
+                "color": "#FFF6EB"
+            }
+        },
+        "OPSoftwareLicense": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "key",
+                "color": "#FFF6EB"
+            }
+        },
+        "OPSshKey": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "terminal",
+                "color": "#FFF6EB"
+            }
+        },
+        "OPWirelessRouter": {
+            "icon": {
+                "type": "font-awesome",
+                "name": "wifi",
+                "color": "#FFF6EB"
+            }
+        }
+    }
+}
