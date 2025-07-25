@@ -254,12 +254,12 @@ function Get-1PassVault
                     #'edit_items' {}
                     #'archive_items' {}
                     #'delete_items' {}
-                    'view_and_copy_passwords' { $null = $edges.Add((New-1PassHoundEdge -Kind OPViewAndCopyPasswords -StartId $group.id -EndId $vault.id)) }
+                    #'view_and_copy_passwords' { $null = $edges.Add((New-1PassHoundEdge -Kind OPViewAndCopyPasswords -StartId $group.id -EndId $vault.id)) }
                     #'view_item_history' {}
                     #'import_items' {}
-                    'export_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPExportItems -StartId $group.id -EndId $vault.id)) }
-                    'copy_and_share_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPCopyAndShareItems -StartId $group.id -EndId $vault.id)) }
-                    'print_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPPrintItems -StartId $group.id -EndId $vault.id)) }
+                    #'export_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPExportItems -StartId $group.id -EndId $vault.id)) }
+                    #'copy_and_share_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPCopyAndShareItems -StartId $group.id -EndId $vault.id)) }
+                    #'print_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPPrintItems -StartId $group.id -EndId $vault.id)) }
                     'manage_vault' { $null = $edges.Add((New-1PassHoundEdge -Kind OPManageVault -StartId $group.id -EndId $vault.id)) }
                 }
             }
@@ -277,12 +277,12 @@ function Get-1PassVault
                     #'edit_items' {}
                     #'archive_items' {}
                     #'delete_items' {}
-                    'view_and_copy_passwords' { $null = $edges.Add((New-1PassHoundEdge -Kind OPViewAndCopyPasswords -StartId $user.id -EndId $vault.id)) }
+                    #'view_and_copy_passwords' { $null = $edges.Add((New-1PassHoundEdge -Kind OPViewAndCopyPasswords -StartId $user.id -EndId $vault.id)) }
                     #'view_item_history' {}
                     #'import_items' {}
-                    'export_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPExportItems -StartId $user.id -EndId $vault.id)) }
-                    'copy_and_share_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPCopyAndShareItems -StartId $user.id -EndId $vault.id)) }
-                    'print_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPPrintItems -StartId $user.id -EndId $vault.id)) }
+                    #'export_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPExportItems -StartId $user.id -EndId $vault.id)) }
+                    #'copy_and_share_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPCopyAndShareItems -StartId $user.id -EndId $vault.id)) }
+                    #'print_items' { $null = $edges.Add((New-1PassHoundEdge -Kind OPPrintItems -StartId $user.id -EndId $vault.id)) }
                     'manage_vault' { $null = $edges.Add((New-1PassHoundEdge -Kind OPManageVault -StartId $user.id -EndId $vault.id)) }
                 }
             }         
