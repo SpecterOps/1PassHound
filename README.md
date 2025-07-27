@@ -91,20 +91,20 @@ Nodes correspond to each object type (accounts, vaults, users, groups, and all i
 
 Edges capture every relationship; who contains what, membership, view vs. manage permissions, etc.
 
-| Edge Type          | Source           | Target            | Description                                  |
-|--------------------|------------------|-------------------|----------------------------------------------|
-| `OPContains`       | `OPAccount`      | `OPItem`          | Account contains items                       |
-| `OPContains`       | `OPAccount`      | `OPUser`          | Account contains users                       |
-| `OPContains`       | `OPAccount`      | `OPVault`         | Account contains vaults                      |
-| `OPContains`       | `OPAccount`      | `OPGroup`         | Account contains groups                      |
-| `OPHasItem`        | `OPVault`        | `OPItem`          | Vault holds items                            |
-| `OPViewItems`      | `OPUser`         | `OPVault`         | User can view items in the vault             |
-| `OPViewItems`      | `OPGroup`        | `OPVault`         | Group can view items in the vault            |
-| `OPManageVault`    | `OPUser`         | `OPVault`         | User can manage the vault                    |
-| `OPManageVault`    | `OPGroup`        | `OPVault`         | Group can manage the vault                   |
-| `OPMemberOf`       | `OPUser`         | `OPGroup`         | User is a member of a group                  |
-| `OPManageGroups`   | `OPGroup`        | `OPAccount`       | Group can manage other groups in the account |
-| `OPRecoverAccounts`| `OPGroup`        | `OPAccount`       | Group can recover accounts                   |
+| Edge Type          | Source           | Target            | Description                                  | Travesable |
+|--------------------|------------------|-------------------|----------------------------------------------| ---------- |
+| `OPContains`       | `OPAccount`      | `OPItem`          | Account contains items                       | n          |
+| `OPContains`       | `OPAccount`      | `OPUser`          | Account contains users                       | n          |
+| `OPContains`       | `OPAccount`      | `OPVault`         | Account contains vaults                      | n          |
+| `OPContains`       | `OPAccount`      | `OPGroup`         | Account contains groups                      | n          |
+| `OPHasItem`        | `OPVault`        | `OPItem`          | Vault holds items                            | y          |
+| `OPViewItems`      | `OPUser`         | `OPVault`         | User can view items in the vault             | y          |
+| `OPViewItems`      | `OPGroup`        | `OPVault`         | Group can view items in the vault            | y          |
+| `OPManageVault`    | `OPUser`         | `OPVault`         | User can manage the vault                    | y          |
+| `OPManageVault`    | `OPGroup`        | `OPVault`         | Group can manage the vault                   | y          |
+| `OPMemberOf`       | `OPUser`         | `OPGroup`         | User is a member of a group                  | y          |
+| `OPManageGroups`   | `OPGroup`        | `OPAccount`       | Group can manage other groups in the account | y          |
+| `OPRecoverAccounts`| `OPGroup`        | `OPAccount`       | Group can recover accounts                   | y          |
 
 ## Contributing
 
