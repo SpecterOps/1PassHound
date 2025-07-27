@@ -67,7 +67,7 @@ Whether you’re auditing permissions, responding to incidents, or simply explor
 
 Below is the complete set of nodes and edges as defined in model.json.
 
-![1Password OpenGraph Schema](./docs/acl‑model.png)
+![1Password OpenGraph Schema](./schema.png)
 
 ### Nodes
 
