@@ -67,7 +67,7 @@ Whether you’re auditing permissions, responding to incidents, or simply explor
 
 Below is the complete set of nodes and edges as defined in the [model](./model.json).
 
-![1Password OpenGraph Schema](./schema.png)
+![1Password OpenGraph Schema](./images/schema.png)
 
 ### Nodes
 
@@ -105,6 +105,10 @@ Edges capture every relationship; who contains what, membership, view vs. manage
 | `OPMemberOf`       | `OPUser`         | `OPGroup`         | User is a member of a group                  | y          |
 | `OPManageGroups`   | `OPGroup`        | `OPAccount`       | Group can manage other groups in the account | y          |
 | `OPRecoverAccounts`| `OPGroup`        | `OPAccount`       | Group can recover accounts                   | y          |
+
+## Usage Examples
+
+[Checking which users have access to which vaults](./images/vaultaccess.png)
 
 ## Contributing
 
