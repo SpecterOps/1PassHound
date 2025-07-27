@@ -65,7 +65,7 @@ Whether you’re auditing permissions, responding to incidents, or simply explor
 
 ## Schema
 
-Below is the complete set of nodes and edges as defined in model.json.
+Below is the complete set of nodes and edges as defined in the [model](./model.json).
 
 ![1Password OpenGraph Schema](./schema.png)
 
