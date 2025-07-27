@@ -108,7 +108,7 @@ Edges capture every relationship; who contains what, membership, view vs. manage
 
 ## Usage Examples
 
-[Checking which users have access to which vaults](./images/vaultaccess.png)
+![Checking which users have access to which vaults](./images/vaultaccess.png)
 
 ## Contributing
 
