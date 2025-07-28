@@ -84,17 +84,23 @@ Nodes correspond to each object type (accounts, vaults, users, groups, and all i
 
 | Node            | Description                                               |
 |-----------------|-----------------------------------------------------------|
-| `OPAccount`     | Top‑level account resource                                |
-| `OPItem`        | Abstract item resource (parent of specific item types)    |
-| `OPLogin`       | Item containing login credentials                         |
-| `OPSecureNote`  | Item storing secure, free‑form notes                      |
-| `OPCreditCard`  | Item representing a credit card                           |
-| `OPBankAccount` | Item representing a bank account                          |
-| `OPIdentity`    | Item containing personal identity information             |
-| `OPDocument`    | Item storing attached documents/files                     |
-| `OPUser`        | A user belonging to an account                            |
-| `OPVault`       | A vault/container that holds items                        |
-| `OPGroup`       | A group of users within an account                        |
+| <img src="./images/black_OPAccount.svg" width="30"/> OPAccount     | Top‑level account resource                                |
+| <img src="./images/black_OPUser.svg" width="30"/> OPUser        | A user belonging to an account                            |
+| <img src="./images/black_OPGroup.svg" width="30"/> OPGroup       | A group of users within an account                        |
+| <img src="./images/black_OPVault.svg" width="30"/> OPVault       | A vault/container that holds items                        |
+| <img src="./images/black_OPItem.svg" width="30"/> OPItem        | Abstract item resource (parent of specific item types)    |
+| <img src="./images/black_OPApiCredential.svg" width="30"/> OPApiCredential | |
+| <img src="./images/black_OPCreditCard.svg" width="30"/> OPCreditCard  | Item representing a credit card                           |
+| <img src="./images/black_OPDocument.svg" width="30"/> OPDocument    | Item storing attached documents/files                     |
+| <img src="./images/black_OPLogin.svg" width="30"/> OPLogin       | Item containing login credentials                         |
+| <img src="./images/black_OPPassport.svg" width="30"/> OPPassport | |
+| <img src="./images/black_OPPassword.svg" width="30"/> OPPassword | |
+| <img src="./images/black_OPSecureNote.svg" width="30"/> OPSecureNote | |
+| <img src="./images/black_OPServer.svg" width="30"/> OPServer | |
+| <img src="./images/black_OPSoftwareLicense.svg" width="30"/> OPSoftwareLicense | |
+| <img src="./images/black_OPSshKey.svg" width="30"/> OPSshKey | |
+| <img src="./images/black_OPWirelessRouter.svg" width="30"/> OPWirelessRouter | |
+| <img src="./images/black_OPSecureNote.svg" width="30"/> OPSecureNote  | Item storing secure, free‑form notes                      |
 
 ### Edges
 
