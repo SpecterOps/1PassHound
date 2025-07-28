@@ -82,25 +82,24 @@ Below is the complete set of nodes and edges as defined in the [model](./model.j
 
 Nodes correspond to each object type (accounts, vaults, users, groups, and all item sub‑types).
 
-| Node            | Description                                               |
-|-----------------|-----------------------------------------------------------|
-| <img src="./images/black_OPAccount.svg" width="30"/> OPAccount     | Top‑level account resource                                |
-| <img src="./images/black_OPUser.svg" width="30"/> OPUser        | A user belonging to an account                            |
-| <img src="./images/black_OPGroup.svg" width="30"/> OPGroup       | A group of users within an account                        |
-| <img src="./images/black_OPVault.svg" width="30"/> OPVault       | A vault/container that holds items                        |
-| <img src="./images/black_OPItem.svg" width="30"/> OPItem        | Abstract item resource (parent of specific item types)    |
-| <img src="./images/black_OPApiCredential.svg" width="30"/> OPApiCredential | |
-| <img src="./images/black_OPCreditCard.svg" width="30"/> OPCreditCard  | Item representing a credit card                           |
-| <img src="./images/black_OPDocument.svg" width="30"/> OPDocument    | Item storing attached documents/files                     |
-| <img src="./images/black_OPLogin.svg" width="30"/> OPLogin       | Item containing login credentials                         |
-| <img src="./images/black_OPPassport.svg" width="30"/> OPPassport | |
-| <img src="./images/black_OPPassword.svg" width="30"/> OPPassword | |
-| <img src="./images/black_OPSecureNote.svg" width="30"/> OPSecureNote | |
-| <img src="./images/black_OPServer.svg" width="30"/> OPServer | |
-| <img src="./images/black_OPSoftwareLicense.svg" width="30"/> OPSoftwareLicense | |
-| <img src="./images/black_OPSshKey.svg" width="30"/> OPSshKey | |
-| <img src="./images/black_OPWirelessRouter.svg" width="30"/> OPWirelessRouter | |
-| <img src="./images/black_OPSecureNote.svg" width="30"/> OPSecureNote  | Item storing secure, free‑form notes                      |
+| Node                                                                           | Description                                               | Icon        | Color   |
+|--------------------------------------------------------------------------------|-----------------------------------------------------------|-------------|---------|
+| <img src="./images/black_OPAccount.png" width="30"/> OPAccount                 | Top‑level account resource                                | building    | #5A8FDC |
+| <img src="./images/black_OPUser.png" width="30"/> OPUser                       | A user belonging to an account                            | user        | #F4CA70 |
+| <img src="./images/black_OPGroup.png" width="30"/> OPGroup                     | A group of users within an account                        | user-group  | #FF8369 |
+| <img src="./images/black_OPVault.png" width="30"/> OPVault                     | A vault/container that holds items                        | vault       | #6AE4A9 |
+| <img src="./images/black_OPItem.png" width="30"/> OPItem                       | Abstract item resource (parent of specific item types)    | passport    | #C04EA0 |
+| <img src="./images/black_OPApiCredential.png" width="30"/> OPApiCredential     |                                                           | code        | #FFF6EB |
+| <img src="./images/black_OPCreditCard.png" width="30"/> OPCreditCard           | Item representing a credit card                           | credit-card | #FFF6EB |
+| <img src="./images/black_OPDocument.png" width="30"/> OPDocument               | Item storing attached documents/files                     | file        | #FFF6EB |
+| <img src="./images/black_OPLogin.png" width="30"/> OPLogin                     | Item containing login credentials                         | user-lock   | #FFF6EB |
+| <img src="./images/black_OPPassport.png" width="30"/> OPPassport               |                                                           | passport    | #FFF6EB |
+| <img src="./images/black_OPPassword.png" width="30"/> OPPassword               |                                                           | key         | #FFF6EB |
+| <img src="./images/black_OPSecureNote.png" width="30"/> OPSecureNote           | Item storing secure, free‑form notes                      | note-sticky | #FFF6EB |
+| <img src="./images/black_OPServer.png" width="30"/> OPServer                   |                                                           | server      | #FFF6EB |
+| <img src="./images/black_OPSoftwareLicense.png" width="30"/> OPSoftwareLicense |                                                           | key         | #FFF6EB |
+| <img src="./images/black_OPSshKey.png" width="30"/> OPSshKey                   |                                                           | terminal    | #FFF6EB |
+| <img src="./images/black_OPWirelessRouter.png" width="30"/> OPWirelessRouter   |                                                           | wifi        | #FFF6EB |
 
 ### Edges
 
