@@ -1,12 +1,3 @@
-<p align="center">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="cmd/ui/public/img/logo-secondary-transparent-full.svg">
-        <img src="./images/vaultaccess.png" alt="1PassHound" width='400' />
-    </picture>
-</p>
-
-<hr />
-
 # 1PassHound
 
 ## Overview
