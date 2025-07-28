@@ -1,3 +1,12 @@
+<p align="center">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="cmd/ui/public/img/logo-secondary-transparent-full.svg">
+        <img src="./images/vaultaccess.png" alt="1PassHound" width='400' />
+    </picture>
+</p>
+
+<hr />
+
 # 1PassHound
 
 ## Overview
@@ -109,6 +118,20 @@ Edges capture every relationship; who contains what, membership, view vs. manage
 ## Usage Examples
 
 ![Checking which users have access to which vaults](./images/vaultaccess.png)
+
+### Checking a User's effective Vault access
+
+#### Finding the User's Object Identifier
+
+#### Querying effective vault access
+
+![The effective Vault access for the Luke Paine User](./images/uservaultaccess.png)
+
+### Checking which Users have access to a specified Vault
+
+### Viewing the Items contained in a Vault
+
+### Identifying Administrators
 
 ## Contributing
 
