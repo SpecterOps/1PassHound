@@ -1,5 +1,7 @@
 # 1PassHound
 
+![Vault Access](./images/vaultaccess.png)
+
 ## Overview
 
 The **1Password for Business OpenGraph** extension lets you bring your 1Password ACL data into BloodHound’s graph‑analysis framework. With this extension, you can:
