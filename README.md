@@ -36,6 +36,8 @@ Whether you’re auditing permissions, responding to incidents, or simply explor
    - Turn on the 1Password desktop‑app integration so the CLI can authenticate via your signed‑in app:  
      https://developer.1password.com/docs/cli/get-started/#step-2-turn-on-the-1password-desktop-app-integration
 
+     NOTE: You will only be able to collect information about Groups and Vaults that you have access to. There may be ways to reduce the necessary permissions, but for now we've only verified full visibility via an account in the Administrators group.
+
 4. **Authenticate**  
    - From your macOS or Windows PowerShell session, run:  
      ```powershell
