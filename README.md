@@ -113,24 +113,6 @@ Edges capture every relationship; who contains what, membership, view vs. manage
 | `OPManageGroups`   | `OPGroup`        | `OPAccount`       | Group can manage other groups in the account | y          |
 | `OPRecoverAccounts`| `OPGroup`        | `OPAccount`       | Group can recover accounts                   | y          |
 
-## Usage Examples
-
-![Checking which users have access to which vaults](./images/vaultaccess.png)
-
-### Checking a User's effective Vault access
-
-#### Finding the User's Object Identifier
-
-#### Querying effective vault access
-
-![The effective Vault access for the Luke Paine User](./images/uservaultaccess.png)
-
-### Checking which Users have access to a specified Vault
-
-### Viewing the Items contained in a Vault
-
-### Identifying Administrators
-
 ## Contributing
 
 We welcome and appreciate your contributions! To make the process smooth and efficient, please follow these steps:
