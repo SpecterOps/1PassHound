@@ -78,6 +78,13 @@ function New-1PassHoundEdge
     Write-Output $edge
 }
 
+function Normalize-Null
+{
+    param($Value)
+    if ($null -eq $Value) { return "" }
+    return $Value
+}
+
 function Get-1PassAccount
 {
     $nodes = New-Object System.Collections.ArrayList
@@ -149,7 +156,6 @@ function Get-1PassGroup
             created      = Normalize-Null $groupDetails.created_at
             updated      = Normalize-Null $groupDetails.updated_at
             type         = Normalize-Null $groupDetails.type
-            permissions  = Normalize-Null $groupDetails.permissions
             account_name = Normalize-Null $account.name
             account_id   = Normalize-Null $account.id
         }
@@ -385,12 +391,15 @@ function Invoke-1PassHound
     if($items.edges) { $edges.AddRange(@($items.edges)) }
 
     $payload = [PSCustomObject]@{
+        metadata = [PSCustomObject]@{
+            source_kind = "OPBase"
+        }
         graph = [PSCustomObject]@{
             nodes = $nodes.ToArray()
             edges = $edges.ToArray()
         }
     } | ConvertTo-Json -Depth 10
 
-    $payload | Out-File -FilePath ./1pass.json
+    $payload | Out-File -FilePath "./1pass_$($account.id).json"
     #$payload | BHDataUploadJSON
 }
