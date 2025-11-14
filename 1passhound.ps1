@@ -281,7 +281,7 @@ function Get-1PassItem
     # Get Items in Vault
     foreach($item in (op item list --format json | ConvertFrom-Json))
     {
-        if(-not $item.vault.name -eq 'Employee')
+        if($item.vault.name -ne 'Employee')
         {
             $urls = New-Object System.Collections.ArrayList
 

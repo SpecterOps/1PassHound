@@ -84,26 +84,26 @@ Below is the complete set of nodes and edges as defined in the [model](./model.j
 
 Nodes correspond to each object type (accounts, vaults, users, groups, and all item sub‑types).
 
-| Node                                                                           | Description                                                                                  | Icon        | Color   |
-|--------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-------------|---------|
-| <img src="./images/black_OPAccount.png" width="30"/> OPAccount                 | Top‑level account resource                                                                   | building    | #5A8FDC |
-| <img src="./images/black_OPUser.png" width="30"/> OPUser                       | A user belonging to an account                                                               | user        | #F4CA70 |
-| <img src="./images/black_OPGroup.png" width="30"/> OPGroup                     | A group of users within an account                                                           | user-group  | #FF8369 |
-| <img src="./images/black_OPVault.png" width="30"/> OPVault                     | A vault/container that holds items                                                           | vault       | #6AE4A9 |
-| <img src="./images/black_OPItem.png" width="30"/> OPItem                       | Abstract item resource (parent of specific item types)                                       | passport    | #C04EA0 |
-| <img src="./images/black_OPApiCredential.png" width="30"/> OPApiCredential     | An API key, token, or secret used by applications or services to authenticate against an API | code        | #FFF6EB |
-| <img src="./images/black_OPCreditCard.png" width="30"/> OPCreditCard           | A stored payment card record, including card number, expiration date, and billing details    | credit-card | #FFF6EB |
-| <img src="./images/black_OPDocument.png" width="30"/> OPDocument               | An arbitrary file or document (PDF, Word, spreadsheet, etc.) attached to a vault             | file        | #FFF6EB |
-| <img src="./images/black_OPLogin.png" width="30"/> OPLogin                     | A website or service login record containing a username and password pair                    | user-lock   | #FFF6EB |
-| <img src="./images/black_OPPassport.png" width="30"/> OPPassport               | A secure note formatted for passport information (number, issue/expiry dates, etc.)          | passport    | #FFF6EB |
-| <img src="./images/black_OPPassword.png" width="30"/> OPPassword               | A standalone password entry, not tied to a specific login record.                            | key         | #FFF6EB |
-| <img src="./images/black_OPSecureNote.png" width="30"/> OPSecureNote           | A free‑form secure note for storing text, URLs, or other free‑form data                      | note-sticky | #FFF6EB |
-| <img src="./images/black_OPServer.png" width="30"/> OPServer                   | Credentials for server access (SSH password, IP address, etc.)                               | server      | #FFF6EB |
-| <img src="./images/black_OPSoftwareLicense.png" width="30"/> OPSoftwareLicense | A software license key or file, optionally with purchase/expiry metadata                     | key         | #FFF6EB |
-| <img src="./images/black_OPSshKey.png" width="30"/> OPSshKey                   | An SSH key pair (public + private) for authenticating to servers                             | terminal    | #FFF6EB |
-| <img src="./images/black_OPWirelessRouter.png" width="30"/> OPWirelessRouter   | Wi‑Fi network credentials (SSID, passphrase, encryption type)                                | wifi        | #FFF6EB |
+| Node                                                                           | Icon        | Color     | Description                                                                                  |
+|--------------------------------------------------------------------------------|-------------|-----------|----------------------------------------------------------------------------------------------|
+| <img src="./images/black_OPAccount.png" width="30"/> OPAccount                 | building    | #5A8FDC | Top‑level account resource                                                                   |
+| <img src="./images/black_OPUser.png" width="30"/> OPUser                       | user        | #F4CA70 | A user belonging to an account                                                               |
+| <img src="./images/black_OPGroup.png" width="30"/> OPGroup                     | user-group  | #FF8369 | A group of users within an account                                                           |
+| <img src="./images/black_OPVault.png" width="30"/> OPVault                     | vault       | #6AE4A9 | A vault/container that holds items                                                           |
+| <img src="./images/black_OPItem.png" width="30"/> OPItem                       | passport    | #C04EA0 | Abstract item resource (parent of specific item types)                                       |
+| <img src="./images/black_OPApiCredential.png" width="30"/> OPApiCredential     | code        | #FFF6EB | An API key, token, or secret used by applications or services to authenticate against an API |
+| <img src="./images/black_OPCreditCard.png" width="30"/> OPCreditCard           | credit-card | #FFF6EB | A stored payment card record, including card number, expiration date, and billing details    |
+| <img src="./images/black_OPDocument.png" width="30"/> OPDocument               | file        | #FFF6EB | An arbitrary file or document (PDF, Word, spreadsheet, etc.) attached to a vault             |
+| <img src="./images/black_OPLogin.png" width="30"/> OPLogin                     | user-lock   | #FFF6EB | A website or service login record containing a username and password pair                    |
+| <img src="./images/black_OPPassport.png" width="30"/> OPPassport               | passport    | #FFF6EB | A secure note formatted for passport information (number, issue/expiry dates, etc.)          |
+| <img src="./images/black_OPPassword.png" width="30"/> OPPassword               | key         | #FFF6EB | A standalone password entry, not tied to a specific login record.                            |
+| <img src="./images/black_OPSecureNote.png" width="30"/> OPSecureNote           | note-sticky | #FFF6EB | A free‑form secure note for storing text, URLs, or other free‑form data                      |
+| <img src="./images/black_OPServer.png" width="30"/> OPServer                   | server      | #FFF6EB | Credentials for server access (SSH password, IP address, etc.)                               |
+| <img src="./images/black_OPSoftwareLicense.png" width="30"/> OPSoftwareLicense | key         | #FFF6EB | A software license key or file, optionally with purchase/expiry metadata                     |
+| <img src="./images/black_OPSshKey.png" width="30"/> OPSshKey                   | terminal    | #FFF6EB | An SSH key pair (public + private) for authenticating to servers                             |
+| <img src="./images/black_OPWirelessRouter.png" width="30"/> OPWirelessRouter   | wifi        | #FFF6EB | Wi‑Fi network credentials (SSID, passphrase, encryption type)                                |
 
-#### <img src="./images/black_OPAccount.png" width="50"/> OPAccount
+#### <img src="./images/black_OPAccount.png" width="30"/> OPAccount
 
 | Property Name | Display Name | Data Type | Sample Value              | Description |
 |---------------|--------------|-----------|---------------------------|-------------|
@@ -114,7 +114,7 @@ Nodes correspond to each object type (accounts, vaults, users, groups, and all i
 | state         | State        | string    | ACTIVE                    | |
 | created       | Created      | datetime  | 2025-07-15T20:33:43Z      | |
 
-#### <img src="./images/black_OPUser.png" width="50"/> OPUser
+#### <img src="./images/black_OPUser.png" width="30"/> OPUser
 
 | Property Name | Display Name | Data Type | Sample Value               | Description |
 |---------------|--------------|-----------|----------------------------|-------------|
@@ -126,7 +126,7 @@ Nodes correspond to each object type (accounts, vaults, users, groups, and all i
 | account_id    | Account Id   | string    | 7Z36OJI23456789DQPHOFMPGM  | |
 | account_name  | Account Name | string    | SpecterOps Development     | |
 
-#### <img src="./images/black_OPGroup.png" width="50"/> OPGroup
+#### <img src="./images/black_OPGroup.png" width="30"/> OPGroup
 
 | Property Name | Display Name | Data Type | Sample Value               | Description |
 |---------------|--------------|-----------|----------------------------|-------------|
@@ -137,6 +137,34 @@ Nodes correspond to each object type (accounts, vaults, users, groups, and all i
 | type          | Type         | string    | OWNERS, RECOVERY, ADMINISTRATORS, TEAM_MEMBERS, USER_DEFINED | |
 | account_id    | Account Id   | string    | 7Z36OJI23456789DQPHOFMPGM  | |
 | account_name  | Account Name | string    | SpecterOps Development     | |
+
+#### <img src="./images/black_OPVault.png" width="30"/> OPVault
+
+| Property Name | Display Name | Data Type | Sample Value               | Description |
+|---------------|--------------|-----------|----------------------------|-------------|
+| id            | Id           | string    | ABCDEFGHIJKLMNOPQRSTUVWXYZ | |
+| description   | Description  | string    | Credit cards, account passwords, and more | |
+| type          | Type         | string    | EVERYONE, PERSONAL, USER_CREATED | |
+| created       | Created      | datetime  | 2025-07-15T20:33:45Z       | |
+| updated       | Updated      | datetime  | 2025-07-15T20:33:45Z       | |
+| item_count    | Item Count   | integer   | 4                          | |
+| account_id    | Account Id   | string    | 7Z36OJI23456789DQPHOFMPGM  | |
+| account_name  | Account Name | string    | SpecterOps Development     | |
+
+#### <img src="./images/black_OPItem.png" width="30"/> OPItem
+
+| Property Name          | Display Name           | Data Type | Sample Value               | Description |
+|------------------------|------------------------|-----------|----------------------------|-------------|
+| id                     | Id                     | string    | ABCDEFGHIJKLMNOPQRSTUVWXYZ | |
+| category               | State                  | string    | API_CREDENTIAL             | |
+| last_edited_by         | Last Edited By         | string    | ABCDEFGHIJKLMNOPQRSTUVWXYZ | |
+| created                | Created                | datetime  | 2025-07-15T20:33:45Z       | |
+| updated                | Updated                | datetime  | 2025-07-15T20:33:45Z       | |
+| additional_information | Additional Information | string    | | |
+| account_id             | Account Id             | string    | 7Z36OJI23456789DQPHOFMPGM  | |
+| account_name           | Account Name           | string    | SpecterOps Development     | |
+
+NOTE: All remaining object types are subsets of the OPItem Kind.
 
 ### Edges
 
