@@ -103,6 +103,41 @@ Nodes correspond to each object type (accounts, vaults, users, groups, and all i
 | <img src="./images/black_OPSshKey.png" width="30"/> OPSshKey                   | An SSH key pair (public + private) for authenticating to servers                             | terminal    | #FFF6EB |
 | <img src="./images/black_OPWirelessRouter.png" width="30"/> OPWirelessRouter   | Wi‑Fi network credentials (SSID, passphrase, encryption type)                                | wifi        | #FFF6EB |
 
+#### <img src="./images/black_OPAccount.png" width="50"/> OPAccount
+
+| Property Name | Display Name | Data Type | Sample Value              | Description |
+|---------------|--------------|-----------|---------------------------|-------------|
+| id            | Id           | string    | 7Z36OJI23456789DQPHOFMPGM | |
+| display_name  | Display Name | string    | SpecterOps Development    | |
+| domain        | Domain FQDN  | string    | specterdev                | |
+| type          | Type         | string    | BUSINESS                  | |
+| state         | State        | string    | ACTIVE                    | |
+| created       | Created      | datetime  | 2025-07-15T20:33:43Z      | |
+
+#### <img src="./images/black_OPUser.png" width="50"/> OPUser
+
+| Property Name | Display Name | Data Type | Sample Value               | Description |
+|---------------|--------------|-----------|----------------------------|-------------|
+| id            | Id           | string    | ABCDEFGHIJKLMNOPQRSTUVWXYZ | |
+| display_name  | Display Name | string    | Jared Atkinson             | |
+| email         | Email        | string    | jatkinson@specterops.io    | |
+| state         | State        | string    | ACTIVE                     | |
+| type          | Type         | string    | BUSINESS                   | |
+| account_id    | Account Id   | string    | 7Z36OJI23456789DQPHOFMPGM  | |
+| account_name  | Account Name | string    | SpecterOps Development     | |
+
+#### <img src="./images/black_OPGroup.png" width="50"/> OPGroup
+
+| Property Name | Display Name | Data Type | Sample Value               | Description |
+|---------------|--------------|-----------|----------------------------|-------------|
+| id            | Id           | string    | ABCDEFGHIJKLMNOPQRSTUVWXYZ | |
+| state         | State        | string    | ACTIVE                     | |
+| created       | Created      | datetime  | 2025-07-15T20:33:45Z       | |
+| updated       | Updated      | datetime  | 2025-07-15T20:33:45Z       | |
+| type          | Type         | string    | OWNERS, RECOVERY, ADMINISTRATORS, TEAM_MEMBERS, USER_DEFINED | |
+| account_id    | Account Id   | string    | 7Z36OJI23456789DQPHOFMPGM  | |
+| account_name  | Account Name | string    | SpecterOps Development     | |
+
 ### Edges
 
 Edges capture every relationship; who contains what, membership, view vs. manage permissions, etc.
