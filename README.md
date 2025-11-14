@@ -40,22 +40,29 @@ Whether you’re auditing permissions, responding to incidents, or simply explor
 
 4. **Authenticate**  
    - From your macOS or Windows PowerShell session, run:  
+
      ```powershell
      op signin <your-subdomain>
-     ```  
+     ```
+
    - This exports an `OP_SESSION_<account>` environment variable that the collector uses.
 
 5. **Load & Run the Collector**  
-   - In the repo root (where `1passhound.ps1` lives), dot‑source the script so its functions become available:  
+   - In the repo root (where `1passhound.ps1` lives), dot‑source the script so its functions become available:
+
      ```powershell
      . .\1passhound.ps1
-     ```  
-   - Then execute the main function:  
+     ```
+
+   - Then execute the main function:
+
      ```powershell
      Invoke-1PassHound
-     ```  
-   - By default, this will emit a BloodHound‑compatible JSON graph named:  
      ```
+
+   - By default, this will emit a BloodHound‑compatible JSON graph named:  
+
+     ```bash
      1pass_<accountid>.json
      ```
 
@@ -69,7 +76,116 @@ Whether you’re auditing permissions, responding to incidents, or simply explor
 
 ## Schema
 
-![1Password OpenGraph Schema](./images/schema.png)
+```mermaid
+---
+config:
+  layout: elk
+---
+flowchart TD
+    OPAccount[fa:fa-user OPAccount]
+    OPUser[fa:fa-user OPUser]
+    OPGroup[fa:fa-user-group OPGroup]
+    OPVault[fa:fa-vault OPVault]
+    OPItem[fa:fa-user-secret OPItem]
+    OPApiCredential[fa:fa-code OPApiCredential]
+    OPCreditCard[fa:fa-credit-card OPCreditCard]
+    OPDocument[fa:fa-file OPDocument]
+    OPLogin[fa:fa-user-lock OPLogin]
+    OPPassport[fa:fa-passport OPPassport]
+    OPPassword[fa:fa-key OPPassword]
+    OPSecureNote[fa:fa-note-sticky OPSecureNote]
+    OPServer[fa:fa-server OPServer]
+    OPSoftwareLicense[fa:fa-key OPSoftwareLicense]
+    OPSshKey[fa:fa-terminal OPSshKey]
+    OPWirelessRouter[fa:fa-wifi OPWirelessRouter]
+
+    style OPAccount fill:#5A8FDC
+    style OPUser fill:#F4CA70
+    style OPGroup fill:#FF8369
+    style OPVault fill:#6AE4A9
+    style OPItem fill:#C04EA0
+    style OPApiCredential fill:#FFF6EB
+    style OPCreditCard fill:#FFF6EB
+    style OPDocument fill:#FFF6EB
+    style OPLogin fill:#FFF6EB
+    style OPPassport fill:#FFF6EB
+    style OPPassword fill:#FFF6EB
+    style OPSecureNote fill:#FFF6EB
+    style OPServer fill:#FFF6EB
+    style OPSoftwareLicense fill:#FFF6EB
+    style OPSshKey fill:#FFF6EB
+    style OPWirelessRouter fill:#FFF6EB
+    
+    OPAccount -.->|OPContains| OPItem
+    OPAccount -.->|OPContains| OPUser
+    OPAccount -.->|OPContains| OPVault
+    OPAccount -.->|OPContains| OPGroup
+
+    OPUser -.->|OPMemberOf| OPGroup
+
+    OPUser -.->|OPViewItems| OPVault
+%%  OPUser -.->|OPCreateItems| OPVault
+%%  OPUser -.->|OPEditItems| OPVault
+%%  OPUser -.->|OPArchiveItems| OPVault
+%%  OPUser -.->|OPDeleteItems| OPVault
+%%  OPUser -.->|OPViewAndCopyPasswords| OPVault
+%%  OPUser -.->|OPViewItemHistory| OPVault
+%%  OPUser -.->|OPImportItems| OPVault
+%%  OPUser -.->|OPExportItems| OPVault
+%%  OPUser -.->|OPCopyAndShareItems| OPVault
+%%  OPUser -.->|OPPrintItems| OPVault
+    OPUser -.->|OPManageVault| OPVault
+
+    OPGroup -.->|OPViewItems| OPVault
+%%  OPUser -.->|OPCreateItems| OPVault
+%%  OPUser -.->|OPEditItems| OPVault
+%%  OPUser -.->|OPArchiveItems| OPVault
+%%  OPUser -.->|OPDeleteItems| OPVault
+%%  OPUser -.->|OPViewAndCopyPasswords| OPVault
+%%  OPUser -.->|OPViewItemHistory| OPVault
+%%  OPUser -.->|OPImportItems| OPVault
+%%  OPUser -.->|OPExportItems| OPVault
+%%  OPUser -.->|OPCopyAndShareItems| OPVault
+%%  OPUser -.->|OPPrintItems| OPVault
+    OPGroup -.->|OPManageVault| OPVault
+
+%%  OPGroup -.->|OPAddPerson| OPAccount
+%%  OPGroup -.->|OPChangePersonName| OPAccount
+%%  OPGroup -.->|OPChangeTeamAttributes| OPAccount
+%%  OPGroup -.->|OPChangeTeamDomain| OPAccount
+%%  OPGroup -.->|OPChangeTeamSettings| OPAccount
+%%  OPGroup -.->|OPCreateVaults| OPAccount
+%%  OPGroup -.->|OPDeletePerson| OPAccount
+%%  OPGroup -.->|OPDeleteTeam| OPAccount
+%%  OPGroup -.->|OPManageBilling| OPAccount
+    OPGroup -.->|OPManageGroups| OPAccount
+%%  OPGroup -.->|OPManageTemplates| OPAccount
+    OPGroup -.->|OPManageVaults| OPAccount
+%%  OPGroup -.->|OPProvisionPeople| OPAccount
+    OPGroup -.->|OPRecoverAccounts| OPAccount
+%%  OPGroup -.->|OPSuspendPerson| OPAccount
+%%  OPGroup -.->|OPSuspendTeam| OPAccount
+%%  OPGroup -.->|OPViewActivitiesLog| OPAccount
+%%  OPGroup -.->|OPViewAdministrativeSidebar| OPAccount
+%%  OPGroup -.->|OPViewBilling| OPAccount
+%%  OPGroup -.->|OPViewPeople| OPAccount
+%%  OPGroup -.->|OPViewTeamSettings| OPAccount
+%%  OPGroup -.->|OPViewTemplates| OPAccount
+    OPGroup -.->|OPViewVaults| OPAccount
+
+    OPVault -.->|OPHasItem| OPItem
+    OPVault -.->|OPHasItem| OPApiCredential
+    OPVault -.->|OPHasItem| OPCreditCard
+    OPVault -.->|OPHasItem| OPDocument
+    OPVault -.->|OPHasItem| OPLogin
+    OPVault -.->|OPHasItem| OPPassport
+    OPVault -.->|OPHasItem| OPPassword
+    OPVault -.->|OPHasItem| OPSecureNote
+    OPVault -.->|OPHasItem| OPServer
+    OPVault -.->|OPHasItem| OPSoftwareLicense
+    OPVault -.->|OPHasItem| OPSshKey
+    OPVault -.->|OPHasItem| OPWirelessRouter
+```
 
 Below is the complete set of nodes and edges as defined in the [model](./model.json).
 
@@ -125,6 +241,7 @@ We welcome and appreciate your contributions! To make the process smooth and eff
 2. **Fork & Create a Branch**  
    - Fork this repository to your own account.  
    - Create a topic branch for your work:
+
      ```bash
      git checkout -b feat/my-new-feature
      ```
@@ -133,15 +250,18 @@ We welcome and appreciate your contributions! To make the process smooth and eff
    - Follow the existing style and patterns in the repo.  
    - Add or update any tests/examples to cover your changes.  
    - Verify your code runs as expected:
+
      ```bash
      # e.g. dot-source the collector and run it, or load the model.json in BloodHound
      ```
 
 4. **Submit a Pull Request**  
    - Push your branch to your fork:
+
      ```bash
      git push origin feat/my-new-feature
-     ```  
+     ```
+ 
    - Open a Pull Request against the `main` branch of this repository.  
    - In your PR description, please include:
      - **What** you’ve changed and **why**.  
