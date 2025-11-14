@@ -48,25 +48,6 @@ function New-1PassHoundItemNode
     Write-Output $props
 }
 
-function ConvertTo-PascalCase {
-    param (
-        [string]$String
-    )
-
-    if ([string]::IsNullOrEmpty($String)) {
-        return $String
-    }
-
-    # Replace common delimiters with spaces and convert to lowercase to handle various input formats
-    $cleanedString = $String -replace '[-_]', ' ' | ForEach-Object { $_.ToLower() }
-
-    # Use TextInfo.ToTitleCase to capitalize the first letter of each word
-    # Then remove spaces to achieve PascalCase
-    $pascalCaseString = (Get-Culture).TextInfo.ToTitleCase($cleanedString).Replace(' ', '')
-
-    return $pascalCaseString
-}
-
 function New-1PassHoundEdge
 {
     Param(
@@ -97,6 +78,25 @@ function New-1PassHoundEdge
     Write-Output $edge
 }
 
+function ConvertTo-PascalCase {
+    param (
+        [string]$String
+    )
+
+    if ([string]::IsNullOrEmpty($String)) {
+        return $String
+    }
+
+    # Replace common delimiters with spaces and convert to lowercase to handle various input formats
+    $cleanedString = $String -replace '[-_]', ' ' | ForEach-Object { $_.ToLower() }
+
+    # Use TextInfo.ToTitleCase to capitalize the first letter of each word
+    # Then remove spaces to achieve PascalCase
+    $pascalCaseString = (Get-Culture).TextInfo.ToTitleCase($cleanedString).Replace(' ', '')
+
+    return $pascalCaseString
+}
+
 function Normalize-Null
 {
     param($Value)
@@ -109,10 +109,10 @@ function Get-1PassAccount
     $nodes = New-Object System.Collections.ArrayList
 
     $account = op account get --format json | ConvertFrom-Json
-
+    $accountDetails = op account list --format json | ConvertFrom-Json | Where-Object { $_.account_uuid -eq $account.id }
     $props = [pscustomobject]@{
         id           = Normalize-Null $account.id
-        name         = Normalize-Null $account.domain
+        name         = Normalize-Null $accountDetails.url
         display_name = Normalize-Null $account.name
         domain       = Normalize-Null $account.domain
         type         = Normalize-Null $account.type
