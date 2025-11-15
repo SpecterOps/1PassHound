@@ -263,7 +263,7 @@ under the `Apache-2.0` license. A full copy of the license may be found in the t
 | MANAGE_BILLING              | x      |                |          |                    |
 | MANAGE_GROUPS               | x      | x              |          |                    |
 | MANAGE_TEMPLATES            | x      | x              |          |                    |
-| MANAGE_VAULTS               | x      |                |          |                    |
+| MANAGE_VAULTS               | x      | x              |          |                    |
 | PROVISION_PEOPLE            |        |                |          | x                  |
 | SUSPEND_PERSON              | x      | x              |          |                    |
 | SUSPEND_TEAM                | x      |                |          |                    |
@@ -289,14 +289,14 @@ under the `Apache-2.0` license. A full copy of the license may be found in the t
 | DELETE_PERSON               |                             |                 |                 |                |                | *6*                    |               |               |                  |                   |
 | DELETE_TEAM                 |                             |                 |                 | *4*            |                |                        |               |               |                  |                   |
 | MANAGE_BILLING              |                             |                 | *3*             | 3              |                |                        |               |               |                  |                   |
-| MANAGE_GROUPS               |                             |                 |                 |                |                |                        |               |               |                  | *10*              |
+| *MANAGE_GROUPS*             |                             |                 |                 |                |                |                        |               |               |                  | *10*              |
 | MANAGE_TEMPLATES            |                             | *2*             |                 | 2              |                |                        |               |               |                  |                   |
 | MANAGE_VAULTS               |                             |                 |                 |                |                |                        |               |               |                  |                   |
 | PROVISION_PEOPLE            |                             |                 |                 |                |                |                        |               |               |                  |                   |
 | SUSPEND_PERSON              |                             |                 |                 |                | *5*            | 5                      |               |               |                  |                   |
 | SUSPEND_TEAM                |                             |                 |                 | *4*            |                |                        |               |               |                  |                   |
-| RECOVER_ACCOUNTS            |                             |                 |                 |                |                |                        |               |               |                  |                   |
-| VIEW_ACTIVITY_LOGS          | *1*                         | 1               |                 |                |                |                        |               |               | *9*              |                   |
+| RECOVER_ACCOUNTS            |                             |                 |                 |                |                |                        |               |               | *9*              |                   |
+| VIEW_ACTIVITY_LOGS          | *1*                         | 1               |                 |                |                |                        |               |               |                  |                   |
 | VIEW_ADMINISTRATIVE_SIDEBAR | *1*                         | 1               |                 | 1              | 1              | 1                      | 1             |               | 1                | 1                 |
 | VIEW_BILLING                |                             |                 | *3*             | 3              |                |                        |               |               |                  |                   |
 | VIEW_PEOPLE                 | *1*                         | 1               |                 | 1              | 1              | 1                      | 1             |               | 1                | 1                 |

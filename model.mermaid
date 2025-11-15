@@ -42,33 +42,38 @@ flowchart TD
     OPAccount -.->|OPContains| OPVault
     OPAccount -.->|OPContains| OPGroup
 
-    OPUser -.->|OPMemberOf| OPGroup
+    OPUser -->|OPMemberOf| OPGroup
+    OPUser -.->|OPManagerOf| OPGroup
 
-    OPUser -.->|OPViewItems| OPVault
+    OPUser -->|OPViewItems| OPVault
 %%  OPUser -.->|OPCreateItems| OPVault
 %%  OPUser -.->|OPEditItems| OPVault
 %%  OPUser -.->|OPArchiveItems| OPVault
 %%  OPUser -.->|OPDeleteItems| OPVault
+    OPUser -->|OPManageVault| OPVault
+%% These represent "Client Settings" that are only applied at the application layer %%
 %%  OPUser -.->|OPViewAndCopyPasswords| OPVault
 %%  OPUser -.->|OPViewItemHistory| OPVault
 %%  OPUser -.->|OPImportItems| OPVault
 %%  OPUser -.->|OPExportItems| OPVault
 %%  OPUser -.->|OPCopyAndShareItems| OPVault
 %%  OPUser -.->|OPPrintItems| OPVault
-    OPUser -.->|OPManageVault| OPVault
 
-    OPGroup -.->|OPViewItems| OPVault
+    OPGroup -->|OPCanAddMember| OPGroup
+
+    OPGroup -->|OPViewItems| OPVault
 %%  OPUser -.->|OPCreateItems| OPVault
 %%  OPUser -.->|OPEditItems| OPVault
 %%  OPUser -.->|OPArchiveItems| OPVault
 %%  OPUser -.->|OPDeleteItems| OPVault
+    OPGroup -->|OPManageVault| OPVault
+%% These represent "Client Settings" that are only applied at the application layer %%
 %%  OPUser -.->|OPViewAndCopyPasswords| OPVault
 %%  OPUser -.->|OPViewItemHistory| OPVault
 %%  OPUser -.->|OPImportItems| OPVault
 %%  OPUser -.->|OPExportItems| OPVault
 %%  OPUser -.->|OPCopyAndShareItems| OPVault
 %%  OPUser -.->|OPPrintItems| OPVault
-    OPGroup -.->|OPManageVault| OPVault
 
 %%  OPGroup -.->|OPAddPerson| OPAccount
 %%  OPGroup -.->|OPChangePersonName| OPAccount
@@ -79,10 +84,13 @@ flowchart TD
 %%  OPGroup -.->|OPDeletePerson| OPAccount
 %%  OPGroup -.->|OPDeleteTeam| OPAccount
 %%  OPGroup -.->|OPManageBilling| OPAccount
+%% OPManageGroups is used to generate the OPCanAddMember edge %%
     OPGroup -.->|OPManageGroups| OPAccount
 %%  OPGroup -.->|OPManageTemplates| OPAccount
-    OPGroup -.->|OPManageVaults| OPAccount
+%% OPManageVaults seemed promising, but it essentially guarantees OPManageVault over all newly created Vaults which is already represented %%
+%%  OPGroup -.->|OPManageVaults| OPAccount
 %%  OPGroup -.->|OPProvisionPeople| OPAccount
+%% I have not completely validated the recovery workflow, but this seems to be an account takeover primitive %%
     OPGroup -.->|OPRecoverAccounts| OPAccount
 %%  OPGroup -.->|OPSuspendPerson| OPAccount
 %%  OPGroup -.->|OPSuspendTeam| OPAccount
@@ -92,17 +100,17 @@ flowchart TD
 %%  OPGroup -.->|OPViewPeople| OPAccount
 %%  OPGroup -.->|OPViewTeamSettings| OPAccount
 %%  OPGroup -.->|OPViewTemplates| OPAccount
-    OPGroup -.->|OPViewVaults| OPAccount
+%%  OPGroup -.->|OPViewVaults| OPAccount
 
-    OPVault -.->|OPHasItem| OPItem
-    OPVault -.->|OPHasItem| OPApiCredential
-    OPVault -.->|OPHasItem| OPCreditCard
-    OPVault -.->|OPHasItem| OPDocument
-    OPVault -.->|OPHasItem| OPLogin
-    OPVault -.->|OPHasItem| OPPassport
-    OPVault -.->|OPHasItem| OPPassword
-    OPVault -.->|OPHasItem| OPSecureNote
-    OPVault -.->|OPHasItem| OPServer
-    OPVault -.->|OPHasItem| OPSoftwareLicense
-    OPVault -.->|OPHasItem| OPSshKey
-    OPVault -.->|OPHasItem| OPWirelessRouter
+    OPVault -->|OPHasItem| OPItem
+    OPVault -->|OPHasItem| OPApiCredential
+    OPVault -->|OPHasItem| OPCreditCard
+    OPVault -->|OPHasItem| OPDocument
+    OPVault -->|OPHasItem| OPLogin
+    OPVault -->|OPHasItem| OPPassport
+    OPVault -->|OPHasItem| OPPassword
+    OPVault -->|OPHasItem| OPSecureNote
+    OPVault -->|OPHasItem| OPServer
+    OPVault -->|OPHasItem| OPSoftwareLicense
+    OPVault -->|OPHasItem| OPSshKey
+    OPVault -->|OPHasItem| OPWirelessRouter

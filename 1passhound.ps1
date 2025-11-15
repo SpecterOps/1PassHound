@@ -190,6 +190,22 @@ function Get-1PassGroup
             foreach($perm in $groupDetails.permissions)
             {
                 $null = $edges.Add((New-1PassHoundEdge -Kind "OP$(ConvertTo-PascalCase -String $perm)" -StartId $groupDetails.id -EndId $account.id))
+            
+                # If the group has the MANAGE_GROUPS permission, they can add members to any USER_DEFINED group
+                # This appears to be the only relevant Account-level permission
+                if($perm -eq "MANAGE_GROUPS"){
+                    # I realize this is not ideal, but I'm going to iterate through all of the groups again here to add those edges
+                    foreach($g in (op group list --format json | ConvertFrom-Json))
+                    {
+                        foreach($gDetail in (op group get "$($g.id)" --format json | ConvertFrom-Json))
+                        {
+                            if($gDetail.type -eq "USER_DEFINED")
+                            {
+                                $null = $edges.Add((New-1PassHoundEdge -Kind OPCanAddMember -StartId $groupDetails.id -EndId $gDetail.id))
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -197,6 +213,12 @@ function Get-1PassGroup
         foreach($user in (op group user list $($groupDetails.id) --format json | ConvertFrom-Json))
         {
             $null = $edges.Add((New-1PassHoundEdge -Kind OPMemberOf -StartId $user.id -EndId $groupDetails.id))
+
+            if($user.role -eq "MANAGER")
+            {
+                $null = $edges.Add((New-1PassHoundEdge -Kind OPManagerOf -StartId $user.id -EndId $groupDetails.id))
+                $null = $edges.Add((New-1PassHoundEdge -Kind OPCanAddMember -StartId $user.id -EndId $gDetail.id))
+            }
         }
     }
 
