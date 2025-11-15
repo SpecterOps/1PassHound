@@ -170,20 +170,22 @@ NOTE: All remaining object types are subsets of the OPItem Kind.
 
 Edges capture every relationship; who contains what, membership, view vs. manage permissions, etc.
 
-| Edge Type          | Source           | Target            | Description                                  | Travesable |
-|--------------------|------------------|-------------------|----------------------------------------------| ---------- |
-| `OPContains`       | `OPAccount`      | `OPItem`          | Account contains items                       | n          |
-| `OPContains`       | `OPAccount`      | `OPUser`          | Account contains users                       | n          |
-| `OPContains`       | `OPAccount`      | `OPVault`         | Account contains vaults                      | n          |
-| `OPContains`       | `OPAccount`      | `OPGroup`         | Account contains groups                      | n          |
-| `OPHasItem`        | `OPVault`        | `OPItem`          | Vault holds items                            | y          |
-| `OPViewItems`      | `OPUser`         | `OPVault`         | User can view items in the vault             | y          |
-| `OPViewItems`      | `OPGroup`        | `OPVault`         | Group can view items in the vault            | y          |
-| `OPManageVault`    | `OPUser`         | `OPVault`         | User can manage the vault                    | y          |
-| `OPManageVault`    | `OPGroup`        | `OPVault`         | Group can manage the vault                   | y          |
-| `OPMemberOf`       | `OPUser`         | `OPGroup`         | User is a member of a group                  | y          |
-| `OPManageGroups`   | `OPGroup`        | `OPAccount`       | Group can manage other groups in the account | y          |
-| `OPRecoverAccounts`| `OPGroup`        | `OPAccount`       | Group can recover accounts                   | y          |
+| Edge Type          | Source           | Target            | Description                                                                 | Travesable |
+|--------------------|------------------|-------------------|-----------------------------------------------------------------------------| ---------- |
+| `OPContains`       | `OPAccount`      | `OPItem`          | Account contains items                                                      | n          |
+| `OPContains`       | `OPAccount`      | `OPUser`          | Account contains users                                                      | n          |
+| `OPContains`       | `OPAccount`      | `OPVault`         | Account contains vaults                                                     | n          |
+| `OPContains`       | `OPAccount`      | `OPGroup`         | Account contains groups                                                     | n          |
+| `OPHasItem`        | `OPVault`        | `OPItem`          | Vault holds items                                                           | y          |
+| `OPViewItems`      | `OPUser`         | `OPVault`         | User can view items in the vault                                            | y          |
+| `OPViewItems`      | `OPGroup`        | `OPVault`         | Group can view items in the vault                                           | y          |
+| `OPManageVault`    | `OPUser`         | `OPVault`         | User can manage the vault                                                   | y          |
+| `OPManageVault`    | `OPGroup`        | `OPVault`         | Group can manage the vault                                                  | y          |
+| `OPMemberOf`       | `OPUser`         | `OPGroup`         | User is a member of a group                                                 | y          |
+| `OPManagerOf`      | `OPUser`         | `OPGroup`         | User is a manager of a group                                                | n          |
+| `OPManageGroups`   | `OPGroup`        | `OPAccount`       | Group can manage other groups in the account                                | n          |
+| `OPCanAddMember`   | `OPGroup`        | `OPGroup`         | Group can add members to another group based on `OPManageGroups` permission | y          |
+| `OPRecoverAccounts`| `OPGroup`        | `OPAccount`       | Group can recover accounts                                                  | n          |
 
 ## Contributing
 
