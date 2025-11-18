@@ -129,27 +129,27 @@ Nodes correspond to each object type (accounts, vaults, users, groups, and all i
 #### <img src="./images/black_OPGroup.png" width="30"/> OPGroup
 
 | Property Name | Display Name | Data Type | Sample Value               | Description |
-|---------------|--------------|-----------|----------------------------|-------------|
-| id            | Id           | string    | ABCDEFGHIJKLMNOPQRSTUVWXYZ | |
-| state         | State        | string    | ACTIVE                     | |
-| created       | Created      | datetime  | 2025-07-15T20:33:45Z       | |
-| updated       | Updated      | datetime  | 2025-07-15T20:33:45Z       | |
+|---------------|--------------|-----------|--------------------------------------------------------------|-------------|
+| id            | Id           | string    | ABCDEFGHIJKLMNOPQRSTUVWXYZ                                   | |
+| state         | State        | string    | ACTIVE                                                       | |
+| created       | Created      | datetime  | 2025-07-15T20:33:45Z                                         | |
+| updated       | Updated      | datetime  | 2025-07-15T20:33:45Z                                         | |
 | type          | Type         | string    | OWNERS, RECOVERY, ADMINISTRATORS, TEAM_MEMBERS, USER_DEFINED | |
-| account_id    | Account Id   | string    | 7Z36OJI23456789DQPHOFMPGM  | |
-| account_name  | Account Name | string    | SpecterOps Development     | |
+| account_id    | Account Id   | string    | 7Z36OJI23456789DQPHOFMPGM                                    | |
+| account_name  | Account Name | string    | SpecterOps Development                                       | |
 
 #### <img src="./images/black_OPVault.png" width="30"/> OPVault
 
-| Property Name | Display Name | Data Type | Sample Value               | Description |
-|---------------|--------------|-----------|----------------------------|-------------|
-| id            | Id           | string    | ABCDEFGHIJKLMNOPQRSTUVWXYZ | |
+| Property Name | Display Name | Data Type | Sample Value                              | Description |
+|---------------|--------------|-----------|-------------------------------------------|-------------|
+| id            | Id           | string    | ABCDEFGHIJKLMNOPQRSTUVWXYZ                | |
 | description   | Description  | string    | Credit cards, account passwords, and more | |
-| type          | Type         | string    | EVERYONE, PERSONAL, USER_CREATED | |
-| created       | Created      | datetime  | 2025-07-15T20:33:45Z       | |
-| updated       | Updated      | datetime  | 2025-07-15T20:33:45Z       | |
-| item_count    | Item Count   | integer   | 4                          | |
-| account_id    | Account Id   | string    | 7Z36OJI23456789DQPHOFMPGM  | |
-| account_name  | Account Name | string    | SpecterOps Development     | |
+| type          | Type         | string    | EVERYONE, PERSONAL, USER_CREATED          | |
+| created       | Created      | datetime  | 2025-07-15T20:33:45Z                      | |
+| updated       | Updated      | datetime  | 2025-07-15T20:33:45Z                      | |
+| item_count    | Item Count   | integer   | 4                                         | |
+| account_id    | Account Id   | string    | 7Z36OJI23456789DQPHOFMPGM                 | |
+| account_name  | Account Name | string    | SpecterOps Development                    | |
 
 #### <img src="./images/black_OPItem.png" width="30"/> OPItem
 
@@ -170,22 +170,22 @@ NOTE: All remaining object types are subsets of the OPItem Kind.
 
 Edges capture every relationship; who contains what, membership, view vs. manage permissions, etc.
 
-| Edge Type          | Source           | Target            | Description                                                                 | Travesable |
-|--------------------|------------------|-------------------|-----------------------------------------------------------------------------| ---------- |
-| `OPContains`       | `OPAccount`      | `OPItem`          | Account contains items                                                      | n          |
-| `OPContains`       | `OPAccount`      | `OPUser`          | Account contains users                                                      | n          |
-| `OPContains`       | `OPAccount`      | `OPVault`         | Account contains vaults                                                     | n          |
-| `OPContains`       | `OPAccount`      | `OPGroup`         | Account contains groups                                                     | n          |
-| `OPHasItem`        | `OPVault`        | `OPItem`          | Vault holds items                                                           | y          |
-| `OPViewItems`      | `OPUser`         | `OPVault`         | User can view items in the vault                                            | y          |
-| `OPViewItems`      | `OPGroup`        | `OPVault`         | Group can view items in the vault                                           | y          |
-| `OPManageVault`    | `OPUser`         | `OPVault`         | User can manage the vault                                                   | y          |
-| `OPManageVault`    | `OPGroup`        | `OPVault`         | Group can manage the vault                                                  | y          |
-| `OPMemberOf`       | `OPUser`         | `OPGroup`         | User is a member of a group                                                 | y          |
-| `OPManagerOf`      | `OPUser`         | `OPGroup`         | User is a manager of a group                                                | n          |
-| `OPManageGroups`   | `OPGroup`        | `OPAccount`       | Group can manage other groups in the account                                | n          |
-| `OPCanAddMember`   | `OPGroup`        | `OPGroup`         | Group can add members to another group based on `OPManageGroups` permission | y          |
-| `OPRecoverAccounts`| `OPGroup`        | `OPAccount`       | Group can recover accounts                                                  | n          |
+| Edge Type          | Source           | Target            | Description                                                                 | Travesable | Post-Processed |
+|--------------------|------------------|-------------------|-----------------------------------------------------------------------------| ---------- |----------------|
+| `OPContains`       | `OPAccount`      | `OPItem`          | Account contains items                                                      | n          | n              |
+| `OPContains`       | `OPAccount`      | `OPUser`          | Account contains users                                                      | n          | n              |
+| `OPContains`       | `OPAccount`      | `OPVault`         | Account contains vaults                                                     | n          | n              |
+| `OPContains`       | `OPAccount`      | `OPGroup`         | Account contains groups                                                     | n          | n              |
+| `OPHasItem`        | `OPVault`        | `OPItem`          | Vault holds items                                                           | y          | n              |
+| `OPViewItems`      | `OPUser`         | `OPVault`         | User can view items in the vault                                            | y          | n              |
+| `OPViewItems`      | `OPGroup`        | `OPVault`         | Group can view items in the vault                                           | y          | n              |
+| `OPManageVault`    | `OPUser`         | `OPVault`         | User can manage the vault                                                   | y          | n              |
+| `OPManageVault`    | `OPGroup`        | `OPVault`         | Group can manage the vault                                                  | y          | n              |
+| `OPMemberOf`       | `OPUser`         | `OPGroup`         | User is a member of a group                                                 | y          | n              |
+| `OPManagerOf`      | `OPUser`         | `OPGroup`         | User is a manager of a group                                                | n          | n              |
+| `OPManageGroups`   | `OPGroup`        | `OPAccount`       | Group can manage other groups in the account                                | n          | n              |
+| `OPAddMember`      | `OPGroup`        | `OPGroup`         | Group can add members to another group based on `OPManageGroups` permission | y          | y              |
+| `OPRecoverAccounts`| `OPGroup`        | `OPAccount`       | Group can recover accounts                                                  | n          | n              |
 
 ## Contributing
 

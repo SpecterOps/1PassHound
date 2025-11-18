@@ -201,7 +201,7 @@ function Get-1PassGroup
                         {
                             if($gDetail.type -eq "USER_DEFINED")
                             {
-                                $null = $edges.Add((New-1PassHoundEdge -Kind OPCanAddMember -StartId $groupDetails.id -EndId $gDetail.id))
+                                $null = $edges.Add((New-1PassHoundEdge -Kind OPAddMember -StartId $groupDetails.id -EndId $gDetail.id))
                             }
                         }
                     }
